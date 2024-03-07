@@ -37,6 +37,9 @@ namespace LabRepaso1
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonCalcular = new System.Windows.Forms.Button();
+            this.comboBoxEmpleados = new System.Windows.Forms.ComboBox();
+            this.buttonMostrar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReporte)).BeginInit();
@@ -113,11 +116,43 @@ namespace LabRepaso1
             this.buttonCalcular.UseVisualStyleBackColor = true;
             this.buttonCalcular.Click += new System.EventHandler(this.buttonCalcular_Click);
             // 
+            // comboBoxEmpleados
+            // 
+            this.comboBoxEmpleados.FormattingEnabled = true;
+            this.comboBoxEmpleados.Items.AddRange(new object[] {
+            "Seleccione al Empleado"});
+            this.comboBoxEmpleados.Location = new System.Drawing.Point(41, 410);
+            this.comboBoxEmpleados.Name = "comboBoxEmpleados";
+            this.comboBoxEmpleados.Size = new System.Drawing.Size(285, 21);
+            this.comboBoxEmpleados.TabIndex = 8;
+            this.comboBoxEmpleados.SelectedIndexChanged += new System.EventHandler(this.comboBoxEmpleados_SelectedIndexChanged);
+            // 
+            // buttonMostrar
+            // 
+            this.buttonMostrar.Location = new System.Drawing.Point(41, 461);
+            this.buttonMostrar.Name = "buttonMostrar";
+            this.buttonMostrar.Size = new System.Drawing.Size(89, 23);
+            this.buttonMostrar.TabIndex = 9;
+            this.buttonMostrar.Text = "Mostrar";
+            this.buttonMostrar.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(406, 417);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "label4";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1233, 450);
+            this.ClientSize = new System.Drawing.Size(1233, 555);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.buttonMostrar);
+            this.Controls.Add(this.comboBoxEmpleados);
             this.Controls.Add(this.buttonCalcular);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -128,6 +163,7 @@ namespace LabRepaso1
             this.Controls.Add(this.dataGridViewEmpleados);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsistencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReporte)).EndInit();
@@ -146,6 +182,9 @@ namespace LabRepaso1
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonCalcular;
+        private System.Windows.Forms.ComboBox comboBoxEmpleados;
+        private System.Windows.Forms.Button buttonMostrar;
+        private System.Windows.Forms.Label label4;
     }
 }
 

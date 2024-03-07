@@ -15,6 +15,7 @@ namespace LabRepaso1
     {
         List<Empleado> empleados = new List<Empleado>();
         List<Asistencia> asistencias = new List<Asistencia>();
+        List<Reporte> reportes = new List<Reporte>();
 
         public Form1()
         {
@@ -82,7 +83,7 @@ namespace LabRepaso1
         }
         private void buttonLeer_Click(object sender, EventArgs e)
         {
-            CargarEmpleados();
+            //CargarEmpleados();
             MostrarEmpleados();
             CargarAsistencia();
             MostrarAsistencia();
@@ -91,7 +92,7 @@ namespace LabRepaso1
 
         private void buttonCalcular_Click(object sender, EventArgs e)
         {
-            List<Reporte> reportes = new List<Reporte>();
+            
 
             foreach (Empleado empleado in empleados)
             {                
@@ -111,6 +112,36 @@ namespace LabRepaso1
             dataGridViewReporte.DataSource = null;
             dataGridViewReporte.DataSource = reportes;
             dataGridViewReporte.Refresh();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            CargarEmpleados();
+            comboBoxEmpleados.DisplayMember = "Nombre";
+            comboBoxEmpleados.ValueMember = "NoEmpleado";
+            comboBoxEmpleados.DataSource = empleados;
+            
+        }
+
+        private void comboBoxEmpleados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int noEmpleado = Convert.ToInt16(comboBoxEmpleados.SelectedValue);
+
+            //Busqueda Lineal
+            //for (int i = 0; i < empleados.Count; i++)
+            //{
+            //    if (noEmpleado == empleados[i].NoEmpleado)
+            //    {
+            //        //Desplegar datos
+            //        label4.Text = empleados[i].Nombre;
+            //    }
+            //}
+
+            //Buscar por medio de Find
+            Empleado empleadoEncontrado = empleados.Find(c => c.NoEmpleado == noEmpleado);
+
+            label4.Text = empleadoEncontrado.Nombre;
+
         }
     }
 }
