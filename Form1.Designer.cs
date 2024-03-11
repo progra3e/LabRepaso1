@@ -135,6 +135,7 @@ namespace LabRepaso1
             this.buttonMostrar.TabIndex = 9;
             this.buttonMostrar.Text = "Mostrar";
             this.buttonMostrar.UseVisualStyleBackColor = true;
+            this.buttonMostrar.Click += new System.EventHandler(this.buttonMostrar_Click);
             // 
             // label4
             // 

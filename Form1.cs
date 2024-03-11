@@ -143,5 +143,12 @@ namespace LabRepaso1
             label4.Text = empleadoEncontrado.Nombre;
 
         }
+
+        private void buttonMostrar_Click(object sender, EventArgs e)
+        {
+            //no implementado porque se uso el SelectedIndexChange
+            //para que ejecute el código automáticamente al seleccionar
+            //un empleado del combobox y no es necesario presionar el botón
+        }
     }
 }
